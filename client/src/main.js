@@ -6,7 +6,7 @@ errorDiv.className = "error";
 form.prepend(errorDiv);
 
 async function loadMessages() {
-  const res = await fetch("http://localhost:3000/messages");
+  const res = await fetch("https://assignment-4-d2t1.onrender.com/messages");
   const data = await res.json();
 
   messagesDiv.innerHTML = "";
@@ -26,7 +26,7 @@ async function loadMessages() {
     deleteBtn.className = "delete-btn";
 
     deleteBtn.addEventListener("click", async () => {
-      await fetch(`http://localhost:3000/messages/${msg.id}`, {
+      await fetch(`https://assignment-4-d2t1.onrender.com/messages/${msg.id}`, {
         method: "DELETE",
       });
       loadMessages();
@@ -55,7 +55,7 @@ form.addEventListener("submit", async (e) => {
     return;
   }
 
-  await fetch("http://localhost:3000/messages", {
+  await fetch("https://assignment-4-d2t1.onrender.com/messages", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
